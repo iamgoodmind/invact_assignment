@@ -18,9 +18,9 @@ app.get('/cart-total', (req, res) => {
   let newItemPrice = parseFloat(req.query.newItemPrice);
   let cartTotal = parseFloat(req.query.cartTotal);
 
-  let updatedCartTotal = cartTotal + newItemPrice;
+  cartTotal += newItemPrice;
 
-  res.send(updatedCartTotal.toString())
+  res.send(cartTotal.toString())
 });
 
 app.get('/membership-discount', (req, res) => {
